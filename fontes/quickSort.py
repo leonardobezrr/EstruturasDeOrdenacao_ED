@@ -1,6 +1,6 @@
 lista = [3,5,2,20,1,50,30]
 
-def quicksort(lista):
+def quickSort(lista):
     if len(lista) <= 1:
         return lista #Caso a lista tenha tamanho menor ou igual a 1
     else:
@@ -12,10 +12,10 @@ def quicksort(lista):
                 esquerda.append(lista[i])
             else:
                 direita.append(lista[i])#vai pra lista da direita 
-        return quicksort(esquerda) + [pivo] + quicksort(direita)
+        return quickSort(esquerda) + [pivo] + quickSort(direita)
     
 print("Lista Desordenada: ",lista)
 print()
-print("Lista Ordenada: ", quicksort(lista))
+print("Lista Ordenada: ", quickSort(lista))
 
 

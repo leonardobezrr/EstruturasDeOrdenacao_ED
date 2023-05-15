@@ -1,6 +1,6 @@
 lista = [3,5,2,20,1,50,30,4]
 
-def distribution_sort(lista):
+def distributionSort(lista):
     # Encontra o valor máximo no lista
     maxValue = max(lista)
     # Cria um lista com zeros com tamanho do valor máximo + 1
@@ -18,5 +18,5 @@ def distribution_sort(lista):
 
 print("Lista Desordenada: ",lista)
 print()
-print("Lista Ordenada: ", distribution_sort(lista))
+print("Lista Ordenada: ", distributionSort(lista))
 

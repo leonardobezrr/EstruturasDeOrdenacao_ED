@@ -1,7 +1,7 @@
 lista = [1,5,3,20,2,50,30]
 
 
-def selection_sort(lista):
+def selectionSort(lista):
     n = len(lista)
     for i in range(n):
         # Encontrando o menor elemento restante na lista desordenada
@@ -14,5 +14,5 @@ def selection_sort(lista):
     return lista
 print("Lista Desordenada: ",lista)
 print()
-selection_sort(lista)
+selectionSort(lista)
 print("Lista Ordenada: ",lista)

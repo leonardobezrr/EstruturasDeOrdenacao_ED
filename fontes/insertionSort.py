@@ -1,6 +1,6 @@
 lista = [1,5,3,20,2,50,30]
 
-def insertion_sort(lista):
+def insertionSort(lista):
     for i in range(1, len(lista)):
         # armazena o valor do elemento atual em uma variável temporária
         eleAtual = lista[i]
@@ -17,5 +17,5 @@ def insertion_sort(lista):
 
 print("Lista Desordenada: ",lista)
 print()
-insertion_sort(lista)
+insertionSort(lista)
 print("Lista Ordenada: ",lista)

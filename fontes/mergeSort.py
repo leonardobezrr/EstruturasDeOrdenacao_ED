@@ -1,6 +1,6 @@
 lista = [3,5,2,20,1,50,30,4]
 
-def merge_sort(lista):
+def mergeSort(lista):
     # Condição de parada: se a lista tem apenas um elemento, ela já está ordenada
     if len(lista) <= 1:
         return lista
@@ -10,8 +10,8 @@ def merge_sort(lista):
     direita = lista[meio:]
     
     # Ordena recursivamente as sublistas esquerda e direita
-    esquerda = merge_sort(esquerda)
-    direita = merge_sort(direita)
+    esquerda = mergeSort(esquerda)
+    direita = mergeSort(direita)
 
     return merge(esquerda, direita)
 
@@ -38,4 +38,4 @@ def merge(esquerda, direita):
 
 print("Lista Desordenada: ",lista)
 print()
-print("Lista Ordenada: ", merge_sort(lista))
+print("Lista Ordenada: ", mergeSort(lista))
