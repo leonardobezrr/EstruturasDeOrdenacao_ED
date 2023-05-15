@@ -1,20 +1,22 @@
+lista = [3,5,2,20,1,50,30,4]
 
 def distribution_sort(lista):
     # Encontra o valor máximo no lista
-    max_value = max(lista)
-    
+    maxValue = max(lista)
     # Cria um lista com zeros com tamanho do valor máximo + 1
-    count_lista = [0] * (max_value + 1)
-    
-    # Preenche o count_lista com a frequência de cada elemento no lista
+    countLista = [0] * (maxValue + 1)
+
     for i in lista:
-        count_lista[i] += 1
-        
-    sorted_lista = []
-    
-    # Preenche o sorted_lista com os elementos ordenados
-    for i in range(max_value + 1):
-        for j in range(count_lista[i]):
-            sorted_lista.append(i)
-    
-    return sorted_lista
+        countLista[i] += 1
+
+    listaOrdenada = []
+    # Preenche o listaOrdenada com os elementos ordenados
+    for i in range(maxValue + 1):
+        for j in range(countLista[i]):
+            listaOrdenada.append(i)
+    return listaOrdenada
+
+print("Lista Desordenada: ",lista)
+print()
+print("Lista Ordenada: ", distribution_sort(lista))
+
