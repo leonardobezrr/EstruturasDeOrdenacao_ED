@@ -5,16 +5,14 @@ def merge_sort(lista):
     if len(lista) <= 1:
         return lista
 
-    # Divide a lista ao meio
     meio = len(lista) // 2
     esquerda = lista[:meio]
     direita = lista[meio:]
-
+    
     # Ordena recursivamente as sublistas esquerda e direita
     esquerda = merge_sort(esquerda)
     direita = merge_sort(direita)
 
-    # Combina as sublistas ordenadas em uma única lista ordenada
     return merge(esquerda, direita)
 
 
