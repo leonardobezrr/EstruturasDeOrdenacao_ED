@@ -1,0 +1,1 @@
+# Selection Sort tem um tempo de execução de O(n^2), ou seja, ele realiza n^2 comparações e n^2 trocas de posição de elementos.
