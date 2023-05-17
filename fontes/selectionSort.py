@@ -1,3 +1,6 @@
+import numpy as np
+from PyGnuplot import gp
+
 lista = [1,5,3,20,2,50,30]
 
 
