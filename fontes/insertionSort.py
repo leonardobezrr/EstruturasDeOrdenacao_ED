@@ -1,4 +1,5 @@
 lista = [1,5,3,20,2,50,30]
+
 # O insertion sort vai percorrer o vetor e caso o elemento anterior for menor ele troca de posição, vai repetindo esse processo até o vetor estar ordenado
 # É útil para pequenas entradas 
 # Melhor caso: O(n), quando a matriz está ordenado; 
