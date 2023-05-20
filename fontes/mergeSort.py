@@ -1,5 +1,7 @@
 lista = [3,5,2,20,1,50,30,4]
 
+# Dividir para conquistar
+# O Merge Sort, inicialmente calcula o ponto médio do sub-arranjo, o que demora um tempo constante, logo depois resolve dois subproblemas, recursivamente, cada um de tamanho n/2, o que acabada contribuindo 2T(n/2) para o tempo de execução. Depois ele uni os sub arranjos em um único conjunto ordenado.
 def mergeSort(lista):
     # Condição de parada: se a lista tem apenas um elemento, ela já está ordenada
     if len(lista) <= 1:
