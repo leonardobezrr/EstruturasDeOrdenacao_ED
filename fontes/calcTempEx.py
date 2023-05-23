@@ -26,7 +26,7 @@ def calcular_tempo_execucao(algoritmo, teste):
 def gerar_array_aleatorio(tamanho):
     array_aleatorio = []
     for _ in range(tamanho):
-        valor_aleatorio = random.randint(1, 100)  # Gera um número aleatório entre 1 e 100
+        valor_aleatorio = random.randint(1,100)  # Gera um número aleatório entre 1 e 1000
         array_aleatorio.append(valor_aleatorio)
     return array_aleatorio
 
@@ -37,7 +37,7 @@ lista = gerar_array_aleatorio(tamanho_do_array)
 
 
 #INSERTION SORT
-for i in range (1,10000,100):
+for i in range (1,10000,10):
     tempo = calcular_tempo_execucao(insertionSort, lista)
     tempoEmMicroS = tempo * 10**6
     v_insertion.append(tempoEmMicroS)
@@ -52,7 +52,7 @@ with open("valoresInsertion.txt", "w") as valoresInsertion:
 print("valores salvos no arquivo 'valoresInsertion.txt'.")
 print()
 #DISTRIBUTION SORT
-for i in range (1,10000,100):
+for i in range (1,10000,10):
     tempo = calcular_tempo_execucao(distributionSort, lista)
     tempoEmMicroS = tempo * 10**6
     v_distribution.append(tempoEmMicroS)
@@ -68,7 +68,7 @@ print("valores salvos no arquivo 'valoresDistribution.txt'.")
 print()
 
 #MERGE SORT
-for i in range (1,10000,100):
+for i in range (1,10000,10):
     tempo = calcular_tempo_execucao(mergeSort, lista)
     tempoEmMicroS = tempo * 10**6
     v_merge.append(tempoEmMicroS)
@@ -84,7 +84,7 @@ print("valores salvos no arquivo 'valoresMerge.txt'.")
 print()
 
 #QUICK SORT
-for i in range (1,10000,100):
+for i in range (1,10000,10):
     tempo = calcular_tempo_execucao(quickSort, lista)
     tempoEmMicroS = tempo * 10**6
     v_quick.append(tempoEmMicroS)
@@ -100,7 +100,7 @@ print("valores salvos no arquivo 'valoresQuick.txt'.")
 print()
 
 #SELECTION SORT
-for i in range (1,10000,100):
+for i in range (1,10000,10):
     tempo = calcular_tempo_execucao(selectionSort, lista)
     tempoEmMicroS = tempo * 10**6
     v_selection.append(tempoEmMicroS)
