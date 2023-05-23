@@ -1,5 +1,14 @@
-lista = [3,5,2,20,1,50,30,4]
+import random
+def gerar_array_aleatorio(tamanho):
+    array_aleatorio = []
+    for _ in range(tamanho):
+        valor_aleatorio = random.randint(1, 100)  # Gera um número aleatório entre 1 e 100
+        array_aleatorio.append(valor_aleatorio)
+    return array_aleatorio
 
+# Exemplo de uso
+tamanho_do_array = 100
+lista = gerar_array_aleatorio(tamanho_do_array)
 def distributionSort(lista):
     # Encontra o valor máximo no lista
     maxValue = max(lista)

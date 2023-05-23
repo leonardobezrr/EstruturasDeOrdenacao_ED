@@ -1,5 +1,14 @@
-lista = [1,5,3,20,2,50,30]
+import random
+def gerar_array_aleatorio(tamanho):
+    array_aleatorio = []
+    for _ in range(tamanho):
+        valor_aleatorio = random.randint(1, 100)  # Gera um número aleatório entre 1 e 100
+        array_aleatorio.append(valor_aleatorio)
+    return array_aleatorio
 
+# Exemplo de uso
+tamanho_do_array = 100
+lista = gerar_array_aleatorio(tamanho_do_array)
 # O insertion sort vai percorrer o vetor e caso o elemento anterior for menor ele troca de posição, vai repetindo esse processo até o vetor estar ordenado
 # É útil para pequenas entradas 
 # Melhor caso: O(n), quando a matriz está ordenado; 
