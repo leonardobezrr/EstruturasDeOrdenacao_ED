@@ -1,1 +1,18 @@
-Nessa pasta, estarão os gráficos dos códigos e os tempos de execução dos mesmos
+Comparando o desempenho dos gráficos:
+DISTRIBUTION SORT
+    Quando comparado, o Distribution Sort apresentou uma maior constância em relação ao Insertion Sort; 
+    Quando comparamos ele com o Merge Sort, também obtivemos um melhor resultado;
+    Quando comparado com o Quick Sort, seguiu o mesmo caminho dos outros e apresentou uma melhor eficiência;
+    E por último, quando comparado com o Selection Sort, também apresentou uma melhor eficiência.
+
+INSERTION SORT
+    Quando comparado com o Merge Sort, apresentou um melhor desempenho;
+    Quando comparado com o Quick Sort, também apresentou um melhor desempenho;
+    Apresentou melhor eficiência quando comparado com o Selection Sort;
+
+MERGE SORT  
+    Quando comparado com o Quick Sort, apresentou um melhor desempenho;
+    Quando comparado com o Selection Sort, também apresentou um melhor desempenho;
+
+QUICK SORT
+    Em relação ao Selection Sort, o Quick Sort apresentou um pouco mais de lentidão em seu desempenho.
