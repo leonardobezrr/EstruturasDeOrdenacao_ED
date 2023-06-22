@@ -24,11 +24,22 @@ def calcular_tempo_execucao(algoritmo, teste):
 #Valor aleatorio
 
 def gerar_array_aleatorio(tamanho):
-    array_aleatorio = []
-    for _ in range(tamanho):
-        valor_aleatorio = random.randint(1,100)  # Gera um número aleatório entre 1 e 1000
-        array_aleatorio.append(valor_aleatorio)
-    return array_aleatorio
+    media_array = []
+    
+    for i in range(100, 900, 100):
+        soma = 0  # Reinicia a soma para cada iteração
+        array_aleatorio = []
+        
+        for _ in range(tamanho):
+            valor_aleatorio = random.randint(1, 100)  # Gera um número aleatório entre 1 e 100
+            array_aleatorio.append(valor_aleatorio)
+            soma += valor_aleatorio
+        
+        media = soma / tamanho
+        media_array.append(media)
+    
+    return media_array
+
 
 # Exemplo de uso
 tamanho_do_array = 100

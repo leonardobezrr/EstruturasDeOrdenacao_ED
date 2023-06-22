@@ -12,7 +12,7 @@ lista = gerar_array_aleatorio(tamanho_do_array)
 # O insertion sort vai percorrer o vetor e caso o elemento anterior for menor ele troca de posição, vai repetindo esse processo até o vetor estar ordenado
 # É útil para pequenas entradas 
 # Melhor caso: O(n), quando a matriz está ordenado; 
-# Médio caso: O(n²/4), quando a matriz tem valores aleatórios sem ordem de classificação (crescente ou decrescente);
+# Médio caso:
 # Pior caso: O(n²), quando a matriz está em ordem inversa, daquela que deseja ordenar.
 
 def insertionSort(lista):
