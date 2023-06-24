@@ -12,11 +12,16 @@ lista = gerar_array_aleatorio(tamanho_do_array)
 def distributionSort(lista):
     # Encontra o valor máximo no lista
     maxValue = max(lista)
-    # Cria um lista com zeros com tamanho do valor máximo + 1
+    if isinstance(maxValue, float):
+        maxValue = int(maxValue)
+
     countLista = [0] * (maxValue + 1)
+    # Cria um lista com zeros com tamanho do valor máximo + 1
 
     for i in lista:
-        countLista[i] += 1
+        index = int(i)
+        countLista[index] += 1
+
 
     listaOrdenada = []
     # Preenche o listaOrdenada com os elementos ordenados

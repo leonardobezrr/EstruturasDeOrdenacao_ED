@@ -12,116 +12,58 @@ v_distribution=[]
 v_merge = []
 v_quick = []
 v_selection = []
+def gerar_lista_aleatoria(tamanho):
+    lista_aleatoria = []
+    valor_anterior = 100
+    for _ in range(tamanho):
+        limite_superior = valor_anterior - 1
+        limite_inferior = limite_superior - 10
+        valor_aleatorio = random.randrange(limite_inferior, limite_superior)  # Gera um número aleatório entre valor_anterior + 1 e 100
+        lista_aleatoria.append(valor_aleatorio)
+        valor_anterior = valor_aleatorio
+    return lista_aleatoria
+# O insertion sort vai percorrer o vetor e caso o elemento anterior for menor ele troca de posição, vai repetindo esse processo até o vetor estar ordenado
+# É útil para pequenas entradas 
+# Melhor caso - Linear;
+#Médio e pior caso - Quadrático;
 
-def calcular_tempo_execucao(algoritmo, teste):
-    inicio = time.perf_counter()
-    algoritmo(teste)
-    fim = time.perf_counter()
-    tempo_execucao = fim - inicio
-    return tempo_execucao
+def insertionSort(lista):
+    for i in range(1, len(lista)):
+        eleAtual = lista[i]
+        j = i - 1
+        # enquanto o elemento anterior for maior que o valor atual e ainda houver elementos para iterar
+        while j >= 0 and lista[j] > eleAtual:
+            # move o elemento anterior para a próxima posição na lista
+            lista[j + 1] = lista[j]
+            # atualiza a posição do elemento anterior para o próximo elemento
+            j -= 1
+        # insere o valor atual na posição correta na lista
+        lista[j + 1] = eleAtual
+    return lista
 
+# Defina o tamanho máximo da lista e o incremento desejado
+tamanho_maximo = 1000
+incremento = 100
 
-#Valor aleatorio
+tempos = []
+tamanhos = []
 
-def gerar_array_aleatorio(tamanho):
-    media_array = []
-    
-    for i in range(100, 900, 100):
-        soma = 0  # Reinicia a soma para cada iteração
-        array_aleatorio = []
-        
-        for _ in range(tamanho):
-            valor_aleatorio = random.randint(1, 100)  # Gera um número aleatório entre 1 e 100
-            array_aleatorio.append(valor_aleatorio)
-            soma += valor_aleatorio
-        
-        media = soma / tamanho
-        media_array.append(media)
-    
-    return media_array
+# Realize a ordenação para diferentes tamanhos de lista
+for tamanho in range(incremento, tamanho_maximo + 1, incremento):
+    lista = gerar_lista_aleatoria(tamanho)
 
+    # Calcule o tempo de execução
+    start_time = time.time()
+    insertionSort(lista)
+    end_time = time.time()
+    tempo_execucao = end_time - start_time
 
-# Exemplo de uso
-tamanho_do_array = 100
-lista = gerar_array_aleatorio(tamanho_do_array)
+    # Armazene os tempos e tamanhos para plotagem
+    tempos.append(tempo_execucao)
+    tamanhos.append(tamanho)
 
+# Salve os resultados em um arquivo de texto
+with open("valoresInsertion_pior.txt", "w") as arquivo:
+    for i in range(len(tempos)):
+        arquivo.write(f"{tamanhos[i]}\t{tempos[i]}\n")
 
-
-#INSERTION SORT
-for i in range (1,10000,10):
-    tempo = calcular_tempo_execucao(insertionSort, lista)
-    tempoEmMicroS = tempo * 10**6
-    v_insertion.append(tempoEmMicroS)
-
-print("Insertion Sort")
-print("Tempo de execução: %.3f µs"%tempoEmMicroS)
-
-with open("valoresInsertion.txt", "w") as valoresInsertion:
-    for tempo in v_insertion:
-        valoresInsertion.write("%.6f\n" % tempo)
-
-print("valores salvos no arquivo 'valoresInsertion.txt'.")
-print()
-#DISTRIBUTION SORT
-for i in range (1,10000,10):
-    tempo = calcular_tempo_execucao(distributionSort, lista)
-    tempoEmMicroS = tempo * 10**6
-    v_distribution.append(tempoEmMicroS)
-
-print("Distribution Sort")
-print("Tempo de execução: %.3f µs"%tempoEmMicroS)
-
-with open("valoresDistribution.txt", "w") as valoresDistribution:
-    for tempo in v_distribution:
-        valoresDistribution.write("%.6f\n" % tempo)
-
-print("valores salvos no arquivo 'valoresDistribution.txt'.")
-print()
-
-#MERGE SORT
-for i in range (1,10000,10):
-    tempo = calcular_tempo_execucao(mergeSort, lista)
-    tempoEmMicroS = tempo * 10**6
-    v_merge.append(tempoEmMicroS)
-
-print("Merge Sort")
-print("Tempo de execução: %.3f µs"%tempoEmMicroS)
-
-with open("valoresMerge.txt", "w") as valoresMerge:
-    for tempo in v_merge:
-        valoresMerge.write("%.6f\n" % tempo)
-
-print("valores salvos no arquivo 'valoresMerge.txt'.")
-print()
-
-#QUICK SORT
-for i in range (1,10000,10):
-    tempo = calcular_tempo_execucao(quickSort, lista)
-    tempoEmMicroS = tempo * 10**6
-    v_quick.append(tempoEmMicroS)
-
-print("Quick Sort")
-print("Tempo de execução: %.3f µs"%tempoEmMicroS)
-
-with open("valoresQuick.txt", "w") as valoresQuick:
-    for tempo in v_quick:
-        valoresQuick.write("%.6f\n" % tempo)
-
-print("valores salvos no arquivo 'valoresQuick.txt'.")
-print()
-
-#SELECTION SORT
-for i in range (1,10000,10):
-    tempo = calcular_tempo_execucao(selectionSort, lista)
-    tempoEmMicroS = tempo * 10**6
-    v_selection.append(tempoEmMicroS)
-
-print("Selection Sort")
-print("Tempo de execução: %.3f µs"%tempoEmMicroS)
-
-with open("valoresSelection.txt", "w") as valoresSelection:
-    for tempo in v_selection:
-        valoresSelection.write("%.6f\n" % tempo)
-
-print("valores salvos no arquivo 'valoresSelection.txt'.")
-print()
