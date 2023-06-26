@@ -22,7 +22,7 @@ def quickSort(lista):
                 esquerda.append(lista[i])
             else:
                 direita.append(lista[i])#vai pra lista da direita 
-        return quickSort(esquerda) + [pivo] + quickSort(direita)
+        return quickSort(esquerda) + [pivo] + quickSort(direita)    
     
 print("Lista Desordenada: ",lista)
 print()
